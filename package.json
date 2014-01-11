@@ -1,6 +1,6 @@
 {
   "name": "sort-international",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Sort an array into an international alphabetical order.",
   "main": "index.js",
   "scripts": {
