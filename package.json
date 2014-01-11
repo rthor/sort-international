@@ -1,0 +1,31 @@
+{
+  "name": "sort-international",
+  "version": "0.0.0",
+  "description": "Sort an array into an international alphabetical order.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node tests/sort-international.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/rthor/sort-international.git"
+  },
+  "keywords": [
+    "array",
+    "sort",
+    "international"
+  ],
+  "author": {
+    "name": "Ragnar Þór Valgeirsson (rthor)",
+    "email": "ragnar.valgeirsson@gmail.com",
+    "url": "http://rthor.is"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rthor/sort-international/issues"
+  },
+  "homepage": "https://github.com/rthor/sort-international",
+  "devDependencies": {
+    "tape": "~2.3.2"
+  }
+}
