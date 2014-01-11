@@ -26,7 +26,6 @@
   },
   "homepage": "https://github.com/rthor/sort-international",
   "devDependencies": {
-    "tape": "~2.3.2",
-    "lodash": "~2.4.1"
+    "tape": "~2.3.2"
   }
 }
