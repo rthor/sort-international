@@ -14,10 +14,13 @@ Then to work with it:
 
 ```javascript
 // Require the algorithm
-var international = require('../index')();
+var international = require('sort-international');
 
-// Sort your array
-myArray.sort( international );
+// Sort array of strings
+myArray.sort( international() );
+
+// Sort array of objects, e.g. with property 'name'
+myArray.sort( international('name') );
 ```
 
 ## The MIT License (MIT)
