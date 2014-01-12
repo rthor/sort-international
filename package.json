@@ -1,6 +1,6 @@
 {
   "name": "sort-international",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Sort an array into an international alphabetical order.",
   "main": "index.js",
   "scripts": {
@@ -27,5 +27,8 @@
   "homepage": "https://github.com/rthor/sort-international",
   "devDependencies": {
     "tape": "~2.3.2"
+  },
+  "dependencies": {
+    "groperty": "0.0.0"
   }
 }

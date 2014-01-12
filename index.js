@@ -1,12 +1,13 @@
-var alphabet = '._!*@()[]{}#^&%-=+01234567989aāáǎàâãąbcćčçdďðeēéěèêëęfgğhıiīíǐìîïjklłmnńňñoōóǒòôpqrřsśšştťuūúǔùůûüǖǘǚǜvwxyýzźżžþæœøõåäö'
+var groperty = require('groperty')
+  , alphabet = '._!*@()[]{}#^&%-=+01234567989aāáǎàâãąbcćčçdďðeēéěèêëęfgğhıiīíǐìîïjklłmnńňñoōóǒòôpqrřsśšştťuūúǔùůûüǖǘǚǜvwxyýzźżžþæœøõåäö'
   , firstA
   , firstB;
   
-module.exports = function ( by ) {
+module.exports = function ( propList ) {
   return function(a, b) {
-    if (by) {
-      a = a[ by ];
-      b = b[ by ];
+    if ( propList ) {
+      a = groperty(a, propList);
+      b = groperty(b, propList);
     }
 
     a = a.toLowerCase();
