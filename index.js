@@ -1,5 +1,5 @@
 var groperty = require('groperty')
-  , alphabet = '._!*@()[]{}#^&%-=+01234567989aāáǎàâãąbcćčçdďðeēéěèêëęfgğhıiīíǐìîïjklłmnńňñoōóǒòôpqrřsśšştťuūúǔùůûüǖǘǚǜvwxyýzźżžþæœøõåäö'
+  , alphabet = '._!*@()[]{}#^&%-=+01234567989āáǎàâãåäaąbćčçcdďðēéěèêëęefgğhıīíǐìîïijklłmńňñnōóǒòôopqřrśšşstťūúǔùůûüǖǘǚǜuvwxýyźżžzþæœøõö'
   , firstA
   , firstB;
   
