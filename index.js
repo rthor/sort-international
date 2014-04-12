@@ -1,10 +1,12 @@
 var groperty = require('groperty')
-  , alphabet = '._!*@()[]{}#^&%-=+01234567989āáǎàâãåäaąbćčçcdďðēéěèêëęefgğhıīíǐìîïijklłmńňñnōóǒòôopqřrśšşstťūúǔùůûüǖǘǚǜuvwxýyźżžzþæœøõö'
-  , firstA
-  , firstB;
+  , alphabet = '._!*@()[]{}#^&%-=+01234567989aāáǎàâãąbcćčçdďðeēéěèêëęfgğhıiīíǐìîïjklłmnńňñoōóǒòôpqrřsśšştťuūúǔùůûüǖǘǚǜvwxyýzźżžþæœøõåäö';
   
 module.exports = function ( propList ) {
   return function(a, b) {
+    var i = -1
+      , aIndex
+      , bIndex;
+
     if ( propList ) {
       a = groperty(a, propList);
       b = groperty(b, propList);
@@ -13,9 +15,12 @@ module.exports = function ( propList ) {
     a = a.toLowerCase();
     b = b.toLowerCase();
 
-    firstA = alphabet.indexOf(a[0]);
-    firstB = alphabet.indexOf(b[0]);
+    do {
+      i++;
+      aIndex = alphabet.indexOf(a[i]);
+      bIndex = alphabet.indexOf(b[i]);
+    } while (aIndex === bIndex);
 
-    return firstA === firstB ? a === b ? 0 : a < b ? -1 : 1 : firstA - firstB;
-  }
+    return aIndex - bIndex;
+  };
 };

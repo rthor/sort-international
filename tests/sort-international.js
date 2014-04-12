@@ -2,11 +2,11 @@ var it = require('tape');
 var international = require('../index');
 
 var arr = [
-  'Jón Margeir Jónson', 'Fríður', 'Ægir', 'Friðgeir', 'Ásmundur', '.DS_Store', 'Élgraður', 'Sólmundur', 'Aron Ómarsson', 'Aron Omarsson'
+  'Jón Margeir Jónson', 'Fríður', 'Ægir', 'Friðgeir', 'Aron Sigurðsson', 'Ásmundur', '.DS_Store', 'Élgraður', 'Sólmundur', 'Aron Ómarsson', 'Aron Omarsson'
 ];
 
 var expectedArr = [
-  '.DS_Store', 'Aron Omarsson', 'Aron Ómarsson', 'Ásmundur', 'Élgraður', 'Friðgeir', 'Fríður', 'Jón Margeir Jónson', 'Sólmundur', 'Ægir'
+  '.DS_Store', 'Aron Omarsson', 'Aron Ómarsson', 'Aron Sigurðsson', 'Ásmundur', 'Élgraður', 'Friðgeir', 'Fríður', 'Jón Margeir Jónson', 'Sólmundur', 'Ægir'
 ];
 
 var objArr = [
