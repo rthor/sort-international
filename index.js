@@ -1,7 +1,7 @@
 var groperty = require('groperty')
   , alphabet = '._!*@()[]{}#^&%-=+01234567989aāáǎàâãąbcćčçdďðeēéěèêëęfgğhıiīíǐìîïjklłmnńňñoōóǒòôpqrřsśšştťuūúǔùůûüǖǘǚǜvwxyýzźżžþæœøõåäö';
   
-module.exports = function ( propList ) {
+function international ( propList ) {
   return function(a, b) {
     var i = -1
       , aIndex
@@ -23,4 +23,8 @@ module.exports = function ( propList ) {
 
     return aIndex - bIndex;
   };
-};
+}
+
+if (typeof module === 'object' && module.hasOwnProperty('exports')) {
+  module.exports = international;
+}
