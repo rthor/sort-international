@@ -1,5 +1,5 @@
 var groperty = require('groperty')
-  , alphabet = 'aāáǎàâãąbcćčçdďðeēéěèêëęfgğhıiīíǐìîïjklłmnńňñoōóǒòôpqrřsśšştťuūúǔùůûüǖǘǚǜvwxyýzźżžþæœøõåäö';
+  , alphabet = 'aāáǎàâãąbcćčçdďðeēéěèêëęėfgğhıiīíǐìîïįjklłmnńňñoōóǒòôpqrřsśšştťuūúǔùůûüǖǘǚǜųvwxyýzźżžþæœøõåäö';
 
 function international ( propList ) {
   return function(a, b) {
