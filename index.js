@@ -1,7 +1,9 @@
 var groperty = require('groperty')
-  , alphabet = 'aāáǎàâãąbcćčçdďðeēéěèêëęėfgğhıiīíǐìîïįjklłmnńňñoōóǒòôpqrřsśšştťuūúǔùůûüǖǘǚǜųvwxyýzźżžþæœøõåäö';
+  , defaultAlphabet = 'aāáǎàâãąbcćčçdďðeēéěèêëęėfgğhıiīíǐìîïįjklłmnńňñoōóǒòôpqrřsśšştťuųūúǔùůûüǖǘǚǜvwxyýzźżžþæœøõåäö';
 
-function international ( propList ) {
+function international ( propList, alphabet ) {
+  alphabet = alphabet || defaultAlphabet;
+
   return function(a, b) {
     var i = -1
       , aIndex

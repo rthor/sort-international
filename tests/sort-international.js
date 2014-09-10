@@ -59,3 +59,12 @@ it('Should sort symbols by ASCII', function (test) {
     test.equals(item, expected[index]);
   });
 });
+
+it('should support custom alphabet', function (test) {
+  test.plan(3);
+  var input = [ "Ignas", "Jonas", "Yvette" ];
+  var expected = [ "Ignas", "Yvette", "Jonas" ]; // Lithuanian rules - Y comes after I
+  input.sort(international(null, "aąbcčdeęėfghiįyjklmnopqrsštuųūvwxzž")).forEach(function (item, index) {
+    test.equals(item, expected[index]);
+  });
+});
