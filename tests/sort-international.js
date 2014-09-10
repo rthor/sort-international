@@ -32,3 +32,12 @@ it('Should order objects corectly', function (test) {
     test.same(item, expectedObjArr[ index ]);
   });
 });
+
+it('Should not go into infinite loop because of duplicates', function (test) {
+  test.plan(3);
+  var before = [ 'Bobby', 'Bob', 'Bob' ];
+  var expected = [ 'Bob', 'Bob', 'Bobby' ];
+  before.sort(international()).forEach(function (item, index) {
+    test.equals(item, expected[index]);
+  });
+});

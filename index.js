@@ -1,6 +1,6 @@
 var groperty = require('groperty')
   , alphabet = '._!*@()[]{}#^&%-=+01234567989aāáǎàâãąbcćčçdďðeēéěèêëęfgğhıiīíǐìîïjklłmnńňñoōóǒòôpqrřsśšştťuūúǔùůûüǖǘǚǜvwxyýzźżžþæœøõåäö';
-  
+
 function international ( propList ) {
   return function(a, b) {
     var i = -1
@@ -19,7 +19,7 @@ function international ( propList ) {
       i++;
       aIndex = alphabet.indexOf(a[i]);
       bIndex = alphabet.indexOf(b[i]);
-    } while (aIndex === bIndex);
+    } while (aIndex === bIndex && i < a.length && i < b.length);
 
     return aIndex - bIndex;
   };
