@@ -17,7 +17,7 @@ var expectedObjArr = [
   {name: '.DS_Store', age: 67}, {name: 'Aron Omarsson', age: 67}, {name: 'Aron Ómarsson', age: 67}, {name: 'Ásmundur', age: 67}, {name: 'Élgraður', age: 67}, {name: 'Friðgeir', age: 67}, {name: 'Fríður', age: 67}, {name: 'Jón Margeir Jónson', age: 67}, {name: 'Sólmundur', age: 67}, {name: 'Ægir', age: 67}
 ];
 
-it('Should order names corectly', function (test) {
+it('Should order names correctly', function (test) {
   test.plan(arr.length);
 
   arr.sort( international() ).forEach(function ( item, index ) {
@@ -25,7 +25,7 @@ it('Should order names corectly', function (test) {
   });
 });
 
-it('Should order objects corectly', function (test) {
+it('Should order objects correctly', function (test) {
   test.plan(objArr.length);
 
   objArr.sort( international('name') ).forEach(function ( item, index ) {
@@ -33,11 +33,29 @@ it('Should order objects corectly', function (test) {
   });
 });
 
-it('Should not go into infinite loop because of duplicates', function (test) {
+it('Should deal with duplicates', function (test) {
   test.plan(3);
-  var before = [ 'Bobby', 'Bob', 'Bob' ];
+  var input = [ 'Bobby', 'Bob', 'Bob' ];
   var expected = [ 'Bob', 'Bob', 'Bobby' ];
-  before.sort(international()).forEach(function (item, index) {
+  input.sort(international()).forEach(function (item, index) {
+    test.equals(item, expected[index]);
+  });
+});
+
+it('Special case for non-alphanumerics', function (test) {
+  test.plan(2);
+  var input = [ 'Doe, John', 'Doe' ];
+  var expected = [ 'Doe', 'Doe, John' ];
+  input.sort(international()).forEach(function (item, index) {
+    test.equals(item, expected[index]);
+  });
+});
+
+it('Should sort symbols by ASCII', function (test) {
+  test.plan(4);
+  var input = [ '$', '#','"', '!' ];
+  var expected = [ '!', '"', '#', '$' ];
+  input.sort(international()).forEach(function (item, index) {
     test.equals(item, expected[index]);
   });
 });
