@@ -17,10 +17,10 @@ Then to work with it:
 var international = require('sort-international');
 
 // Sort array of strings
-myArray.sort( international() );
+myArray.sort(international());
 
 // Sort array of objects, e.g. with property 'name'
-myArray.sort( international('name') );
+myArray.sort(international('name'));
 ```
 
 ## The MIT License (MIT)
