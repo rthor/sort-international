@@ -14,8 +14,8 @@ function international ( propList, alphabet ) {
       b = groperty(b, propList);
     }
 
-    a = a.toLowerCase();
-    b = b.toLowerCase();
+    a = String(a || '').toLowerCase();
+    b = String(b || '').toLowerCase();
 
     do {
       i++;

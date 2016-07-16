@@ -33,10 +33,30 @@ it('Should order objects correctly', function (test) {
   });
 });
 
+it('Should deal with objects not containing selected field', function (test) {
+  var input = [ {name: 'Robert', nickname: 'Bob'}, {name: 'Carl'}, {name: 'John', nickname: 'Jack'} ];
+  var expected = [ {name: 'Carl'}, {name: 'Robert', nickname: 'Bob'}, {name: 'John', nickname: 'Jack' } ];
+
+  test.plan(input.length);
+  input.sort( international('nickname') ).forEach(function ( item, index ) {
+    test.same(item, expected[ index ]);
+  });
+});
+
 it('Should deal with duplicates', function (test) {
   test.plan(3);
   var input = [ 'Bobby', 'Bob', 'Bob' ];
   var expected = [ 'Bob', 'Bob', 'Bobby' ];
+  input.sort(international()).forEach(function (item, index) {
+    test.equals(item, expected[index]);
+  });
+});
+
+it('Should deal with non-strings', function (test) {
+  var input = [ 'Bobby', 'Bob', 1 ];
+  var expected = [ 1, 'Bob', 'Bobby' ];
+
+  test.plan(input.length);
   input.sort(international()).forEach(function (item, index) {
     test.equals(item, expected[index]);
   });
